@@ -46,3 +46,4 @@ console.log(typeof asignaturas);
 console.log(typeof sinDefinir);
 console.log(typeof sinValor);
 
+
