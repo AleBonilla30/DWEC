@@ -40,9 +40,29 @@ equipos.push("Getafe", "Rayo")//coloca el/los elementos al final del array
 equipos.unshift("Alaves","Las palmas")//coloca el/los elementos al principio del array
 
 //borrar elementos
+equipos.pop()//elimina el ultimo elemento del array
+equipos.shift()//elimina el primer elemento del array y lo retorna
 
 //filtar elemento
+//find-retorna el primer elemento que coincida con la busqueda
+//filter-retorna todos los elementos que coincidan con la busqueda
 
-console.log(equipos);
+//buscar un equipo que tenga al menos 7 letras
+let busqueda = equipos.find(item =>{
+    return item.length >= 7;
+});
+console.log(busqueda);
+
+
+//filter
+equipos.filter(item => {
+    return item.length >= 7
+
+}).forEach(element => {
+        console.log(element);
+        
+    });
+
+//console.log(equipos);
 
 
