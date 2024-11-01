@@ -25,7 +25,7 @@ do {
     
 } while (isNaN(numero) || numero <=0);
 
-for (let i = 1; i < numero; i++) {
+for (let i = 1; i <= numero; i++) {
 
     console.log("+".repeat(i));
     
