@@ -1,6 +1,12 @@
 /* 5. Continuando con el ejercicio anterior, ves sacando por consola cartas de la baraja cada 5 segundos.
 Hay que tener en cuenta que cuando una baraja se tiene que quitar del mazo para que no pueda volver a salir. 
-Una vez salga la varaba tendrás que poner el siguiente mensaje:  */
+Una vez salga la varaba tendrás que poner el siguiente mensaje:
+Carta KC
+Valor: 13
+Palo: C
+
+Carta 7T
+Valor: 7  */
 const { shuffle } = require("underscore");
 
 let baraja = []
@@ -77,7 +83,8 @@ barajaDesordenada.forEach((cartaObj, indice) => {
         
         
         
-    }, indice * 5000);
+    }, indice * 5000); // se multiplica indice con el numero a la hora d salir cada carta por que representta la posicion actual
+    // para que vaya saliendo una a una en lugar todas de golpe solo poniendo 5000
 });
 
 setTimeout(() => {
