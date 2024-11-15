@@ -13,7 +13,7 @@ let hiddenCardImg;
 window.onload = function() {
 
     playerName = prompt("Introduce tu nombre:")
-    document.getElementById("welcome").textContent = `¡Bienvenido, ${playerName} listo para jugar..!`
+    document.querySelector("#welcome").textContent = `¡Bienvenido, ${playerName} listo para jugar..!`
     crearBaraja()
     barajear();
     iniciarJuego();
@@ -50,7 +50,7 @@ function iniciarJuego() {
     //se crea la imagen reverso 
     hiddenCardImg = document.createElement("img");
     hiddenCardImg.src = "./utils/images/cards/red_back.png";
-    document.getElementById("cartas-crupier").append(hiddenCardImg)
+    document.querySelector("#cartas-crupier").append(hiddenCardImg)
 
 
         //carta visible 

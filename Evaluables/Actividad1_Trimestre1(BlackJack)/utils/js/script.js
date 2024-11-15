@@ -54,9 +54,9 @@ class BlackJack  {
 
 
           //se crea un evento a los botones
-        document.getElementById("ask").addEventListener("click", this.ask.bind(this));
-        document.getElementById("stay").addEventListener("click", this.stay.bind(this));
-        document.getElementById("resetGame").addEventListener("click",this.resetGame.bind(this));
+        document.querySelector("#ask").addEventListener("click", this.ask.bind(this));
+        document.querySelector("#stay").addEventListener("click", this.stay.bind(this));
+        document.querySelector("#resetGame").addEventListener("click",this.resetGame.bind(this));
         
         
     }
@@ -66,23 +66,15 @@ class BlackJack  {
         if (!this.playerName) {
             
             this.playerName = prompt("Introduce tu nombre:")
-            document.getElementById("welcome").textContent = `¡Bienvenido, ${this.playerName} listo para jugar...! `;
+            document.querySelector("#welcome").textContent = `¡Bienvenido, ${this.playerName} listo para jugar...! `;
         }
+
         
-
-        this.hiddenCard = this.baraja.sacarCartas();
-        this.hiddenCardValue = this.hiddenCard.obtenerValor();
-
-        this.hiddenCardImg = document.createElement("img");
-        this.hiddenCardImg.src = "./utils/images/cards/red_back.png";;
-        document.getElementById("cartas-crupier").append(this.hiddenCardImg);
-
-        this.agregarCarta("cartas-crupier", this.baraja.sacarCartas(), "crupier");
         this.sacarCartasCrupier();
 
         //se activan los botones
-        document.getElementById("ask").disabled = false;
-        document.getElementById("stay").disabled = false;
+        document.querySelector("#ask").disabled = false;
+        document.querySelector("#stay").disabled = false;
 
 
         
@@ -90,11 +82,22 @@ class BlackJack  {
 
     sacarCartasCrupier() {
 
+        this.hiddenCard = this.baraja.sacarCartas();
+        this.hiddenCardValue = this.hiddenCard.obtenerValor();
+        
+        this.hiddenCardImg = document.createElement("img");
+        this.hiddenCardImg.src = "./utils/images/cards/red_back.png";;
+        document.querySelector("#cartas-crupier").append(this.hiddenCardImg);
+        this.agregarCarta("cartas-crupier", this.baraja.sacarCartas(), "crupier");
+
+        
+
         let intervalo = setInterval(() => {
+
             let puntosCartaOculta = this.sumCrupier + this.hiddenCardValue;
 
             if (puntosCartaOculta < 17) {
-            this.agregarCarta("cartas-crupier",this.baraja.sacarCartas(),"crupier");
+                this.agregarCarta("cartas-crupier",this.baraja.sacarCartas(),"crupier");
             
             }else {
                 clearInterval(intervalo)
@@ -112,18 +115,18 @@ class BlackJack  {
     agregarCarta(divId, card, player) {
         let cardImg = document.createElement("img");
         cardImg.src = card.imgSrc;
-        document.getElementById(divId).append(cardImg);
+        document.querySelector(`#${divId}`).append(cardImg);
 
         let cardValue = card.obtenerValor();
         if (player === "crupier") {
             this.sumCrupier += cardValue;
-            document.getElementById("suma-crupier").textContent = this.sumCrupier;
+            document.querySelector("#suma-crupier").textContent = this.sumCrupier;
             if (this.sumCrupier > 21) {
                 this.endGame(`El jugador ${this.playerName} ha ganado 🏆, la banca superó los 21`)
             }
         }else if (player === "player") {
             this.sumYours += cardValue;
-            document.getElementById("suma-player").textContent = this.sumYours;
+            document.querySelector("#suma-player").textContent = this.sumYours;
             if (this.sumYours > 21) {
                 this.reverlarCartaOculta();
                 this.endGame(`La banca gana 🏆, el jugador ${this.playerName} superó los 21`);
@@ -152,20 +155,20 @@ class BlackJack  {
         this.sumYours = 0;
     
         //limpiar los contenedores delas cartas
-        document.getElementById("cartas-crupier").innerHTML= "";
-        document.getElementById("tus-cartas").innerHTML= "";
+        document.querySelector("#cartas-crupier").innerHTML= "";
+        document.querySelector("#tus-cartas").innerHTML= "";
     
         //reiniciar el procentaje de la suma
-        document.getElementById("suma-crupier").innerText = 0;
-        document.getElementById("suma-player").innerText = 0;
+        document.querySelector("#suma-crupier").innerText = 0;
+        document.querySelector("#suma-player").innerText = 0;
     
         //limpiar el resultado 
-        document.getElementById("result").innerText = "";
+        document.querySelector("#result").innerText = "";
     
         //desactivar los botones hasta que empiece el juego
     
-        document.getElementById("ask").disabled = true;
-        document.getElementById("stay").disabled = true;
+        document.querySelector("#ask").disabled = true;
+        document.querySelector("#stay").disabled = true;
     
         //crear y mezclar la baraja
         this.baraja.crearBaraja();
@@ -177,9 +180,9 @@ class BlackJack  {
 
 
     endGame (message) {
-        document.getElementById("result").textContent = message;
-        document.getElementById("ask").disabled = true;
-        document.getElementById("stay").disabled = true;
+        document.querySelector("#result").textContent = message;
+        document.querySelector("#ask").disabled = true;
+        document.querySelector("#stay").disabled = true;
         
         
     }
@@ -187,7 +190,7 @@ class BlackJack  {
     reverlarCartaOculta() {
         this.hiddenCardImg.src = this.hiddenCard.imgSrc;
         this.sumCrupier += this.hiddenCardValue;
-        document.getElementById("suma-crupier").textContent = this.sumCrupier
+        document.querySelector("#suma-crupier").textContent = this.sumCrupier
     }
 
 }
