@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlackJack</title>
+    <link rel="stylesheet" href="utils/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.13.1/underscore-min.js"></script>
+</head>
+<body>
+    <div class="header">
+        <h1>BlackJack</h1>
+    </div>
+    <h2 id="welcome"></h2>
+    <div id="juego">
+        <h3>Banca</h3>
+        <div id="cartas-crupier"></div>
+        <p>Puntos de la banca: <span id="suma-crupier">0</span></p>
+
+        <h3>Jugador</h3>
+        <div id="tus-cartas"></div>
+        <p>Puntos del jugador <span id="suma-player">0</span></p>
+        <div class="botones">
+            <button id="ask" disabled>Pedir Cartas</button>
+            <button id="stay" disabled>Plantarse</button>
+            <button id="resetGame">Jugar de nuevo</button>
+        </div>
+        
+        <p id="result"></p>
+    </div>
+
+    <script src="utils/js/Objetos.js"></script>
+    <script src="utils/js/script.js"></script>
+        
+</body>
+</html>
