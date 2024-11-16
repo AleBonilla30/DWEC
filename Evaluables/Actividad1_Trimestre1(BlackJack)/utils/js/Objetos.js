@@ -38,6 +38,8 @@ class Baraja {
 
     barajearCartas() {
         this.cartas = _.shuffle(this.cartas);
+        console.log(this.cartas);
+        
     }
 
     sacarCartas() {

@@ -1,45 +1,3 @@
-/* class Carta {
-    constructor(valor, tipo){
-        this.valor = valor;
-        this.tipo = tipo;
-        this.imagesSrc = `./utils/images/cards/${valor}${tipo}.png`;
-    }
-
-    obtenerValor () {
-        if (this.valor === "A") {
-            return 1;
-        }else if (["J","Q","K"].includes(this.valor)){
-            return 11;
-        }else{
-            return parseInt(this.valor);
-        }
-    }
-}
-
-class Baraja {
-    constructor() {
-        this.desk = [];
-        this.crearBaraja();
-        this.barajear();
-    }
-
-    crearBaraja() {
-        let valores = ["A", "2","3","4","5","6","7","8","9","10","J","Q","K"];
-        let tipos = ["C","T","D","P"];
-        for (let valor of valores) {
-            for (let tipo of tipos) {
-                this.desk.push(new Carta(valor,tipo));
-            }
-        }
-    }
-
-    barajear() {
-        this.desk = _.shuffle(this.desk);
-    }
-    sacarCarta() {
-        return this.desk.pop();
-    }
-} */
 
 class BlackJack  {
 
@@ -68,16 +26,11 @@ class BlackJack  {
             this.playerName = prompt("Introduce tu nombre:")
             document.querySelector("#welcome").textContent = `¡Bienvenido, ${this.playerName} listo para jugar...! `;
         }
-
-        
         this.sacarCartasCrupier();
-
-        //se activan los botones
+        
+         //se activan los botones
         document.querySelector("#ask").disabled = false;
         document.querySelector("#stay").disabled = false;
-
-
-        
     }
 
     sacarCartasCrupier() {
@@ -89,8 +42,6 @@ class BlackJack  {
         this.hiddenCardImg.src = "./utils/images/cards/red_back.png";;
         document.querySelector("#cartas-crupier").append(this.hiddenCardImg);
         this.agregarCarta("cartas-crupier", this.baraja.sacarCartas(), "crupier");
-
-        
 
         let intervalo = setInterval(() => {
 
@@ -108,9 +59,10 @@ class BlackJack  {
                     }*/
             } 
             
-        }, 2000);
+        },2000);
         
     }
+
 
     agregarCarta(divId, card, player) {
         let cardImg = document.createElement("img");
