@@ -10,9 +10,11 @@ body {
     height: 100vh;
     margin: 0; 
     color: white; 
+    backdrop-filter: blur(4px); /* efecto blur */
 }
 h1, h2, h3, p {
     text-align: center;
+    text-shadow: 2px 4px 5px rgba(0, 0, 0, 0.5);
 }
 .header{
     text-align: center;
@@ -30,7 +32,11 @@ h1, h2, h3, p {
     background: linear-gradient(135deg, #ff4e50, #534f39);
     border-radius: 20px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
     
+}
+.header h1:hover{
+    transform: scale(1.05); /* aumenta el tamaño ligeramente */
 }
 
 h2{
@@ -52,6 +58,7 @@ h3, p {
     border-radius: 30px;
     box-shadow: 1px 5px 7px rgba(0,0,0,0.3);
     margin-bottom: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.5); /* borde con transparencia */
 }
 .botones button{
     flex: 1;
@@ -70,9 +77,10 @@ button {
     border: none;
     border-radius: 10px;
     box-shadow: 1px 5px 7px rgba(0,0,0,0.4);
+    transition: transform 0.2s ease, background 0.3s ease;
 }
 button:hover{
-    background-color: rgb(219, 130, 130);
+    background: linear-gradient(135deg,#ff4e50,  #534f39);
     transform: translateY(-5px);/* levanta los botones hacia arriba */
 }
 
@@ -80,7 +88,6 @@ button:hover{
 #cartas-crupier, #tus-cartas {
     display: flex;
     justify-content: center;
-    /* flex-wrap: wrap; */
     gap: 10px;
     margin-top: 10px;
 }
@@ -92,18 +99,22 @@ button:hover{
     border-radius: 15px;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
     cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     
 }
 #cartas-crupier img:hover{
-    transform: translateY(-5px);
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 } 
 
 #tus-cartas img:hover{
-    transform: translateY(-5px);
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 #suma-player, #suma-crupier{
     margin-bottom: 15px;
     font-size: 20px;
     font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
 }
