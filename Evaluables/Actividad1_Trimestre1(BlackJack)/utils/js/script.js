@@ -74,14 +74,14 @@ class BlackJack  {
             this.sumCrupier += cardValue;
             document.querySelector("#suma-crupier").textContent = this.sumCrupier;
             if (this.sumCrupier > 21) {
-                this.endGame(`El jugador ${this.playerName} ha ganado 🏆, la banca superó los 21`)
+                this.endGame(`${this.playerName} ha ganado 🏆, la banca superó los 21`)
             }
         }else if (player === "player") {
             this.sumYours += cardValue;
             document.querySelector("#suma-player").textContent = this.sumYours;
             if (this.sumYours > 21) {
                 this.reverlarCartaOculta();
-                this.endGame(`La banca gana 🏆, el jugador ${this.playerName} superó los 21`);
+                this.endGame(`La banca gana 🏆, ${this.playerName} superó los 21`);
             }
         }
     }
@@ -93,11 +93,11 @@ class BlackJack  {
     stay(){
         this.reverlarCartaOculta();
         if (this.sumCrupier > this.sumYours && this.sumCrupier <= 21) {
-            this.endGame(`La banca le ha ganado 🏆 al jugador ${this.playerName}`);
+            this.endGame(`La banca ha ganado 🏆 contra ${this.playerName}`);
         }else if (this.sumCrupier === this.sumYours) {
             this.endGame("El juego ha quedado en empate ✨");
         }else{
-            this.endGame(`El jugador ${this.playerName} ha ganado esta partida 🏆`);
+            this.endGame(`${this.playerName} ha ganado esta partida 🏆`);
         }
 
     }
