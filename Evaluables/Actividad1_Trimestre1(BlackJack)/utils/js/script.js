@@ -53,10 +53,10 @@ class BlackJack  {
             }else {
                 clearInterval(intervalo)
                 
-                /* if(puntosCartaOculta > 21) {
+                if(puntosCartaOculta > 21) {
                     this.reverlarCartaOculta();
                     this.endGame(`El jugador ${this.playerName} gana, la banca superó los 21`);
-                    }*/
+                }
             } 
             
         },2000);
