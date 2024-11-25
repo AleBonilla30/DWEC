@@ -19,6 +19,8 @@ export class Equipo {
 
             this.plantilla.push(jugador);
             this.presupuesto -= jugador.valor;
+            console.log("----------------------------------------------------------");
+            
             console.log(`El ${this.nombre}, ficho al jugador ${jugador.nombre} por un valor de ${jugador.valor} M€`);
             console.log(`Tu presupuesto es de ${this.presupuesto} M€`);
             

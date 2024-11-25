@@ -2,9 +2,9 @@ import {Equipo, Jugador}   from "./objeto.js";
 
 
 
-let barca = new Equipo("Barcelona",5000)
-let madrid = new Equipo("Madrid", 8000)
-let atleti = new Equipo("Atleti", 9000)
+let barca = new Equipo("Barcelona",500)
+let madrid = new Equipo("Madrid", 800)
+let atleti = new Equipo("Atleti", 900)
 
 barca.fichaJugador(new Jugador("Gerald pique", "Defensa",50));
 barca.fichaJugador(new Jugador("Ander Astralaga", "Portero",60));
