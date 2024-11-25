@@ -15,7 +15,19 @@ export class Equipo {
     }
 
     fichaJugador(jugador){
-        this.plantilla.push(jugador);
+        if (this.presupuesto > jugador.valor) {
+
+            this.plantilla.push(jugador);
+            this.presupuesto -= jugador.valor;
+            console.log(`El ${this.nombre}, ficho al jugador ${jugador.nombre} por un valor de ${jugador.valor} M€`);
+            console.log(`Tu presupuesto es de ${this.presupuesto} M€`);
+            
+            
+        }else{
+            console.log(`No tienes presupuesto para fichar al jugador.`);
+            
+        }
+        
     }
 
     listarPlantilla(){

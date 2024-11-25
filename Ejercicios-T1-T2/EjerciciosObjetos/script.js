@@ -2,27 +2,27 @@ import {Equipo, Jugador}   from "./objeto.js";
 
 
 
-let barsa = new Equipo("Barsa", 230000)
-let madrid = new Equipo("Madrid", 800000)
-let atleti = new Equipo("Atleti", 500000)
+let barca = new Equipo("Barcelona",5000)
+let madrid = new Equipo("Madrid", 8000)
+let atleti = new Equipo("Atleti", 9000)
 
-barsa.fichaJugador(new Jugador("Gerald pique", "Defensa",50000));
-barsa.fichaJugador(new Jugador("Ander Astralaga", "Portero",60000));
-barsa.fichaJugador(new Jugador("Pau Cubarsí", "Defensa",40000));
-barsa.fichaJugador(new Jugador("Ansu Faty", "Delantero",100000));
-barsa.fichaJugador(new Jugador("Pablo Torres", "Centro campista",80000));
+barca.fichaJugador(new Jugador("Gerald pique", "Defensa",50));
+barca.fichaJugador(new Jugador("Ander Astralaga", "Portero",60));
+barca.fichaJugador(new Jugador("Pau Cubarsí", "Defensa",40));
+barca.fichaJugador(new Jugador("Ansu Faty", "Delantero",100));
+barca.fichaJugador(new Jugador("Pablo Torres", "Centro campista",80));
 
-madrid.fichaJugador(new Jugador("David Beckham", "Centrocampista",100000));
-madrid.fichaJugador(new Jugador("James Rdrigues", "Delantero",80000));
-madrid.fichaJugador(new Jugador("Lunin", "Portero",50000));
-madrid.fichaJugador(new Jugador("Carvajal", "Defensa",110000));
-madrid.fichaJugador(new Jugador("Lucas V.", "Defensa",60000));
+madrid.fichaJugador(new Jugador("David Beckham", "Centrocampista",100));
+madrid.fichaJugador(new Jugador("James Rdrigues", "Delantero",80));
+madrid.fichaJugador(new Jugador("Lunin", "Portero",50));
+madrid.fichaJugador(new Jugador("Carvajal", "Defensa",110));
+madrid.fichaJugador(new Jugador("Lucas V.", "Defensa",60));
 
-atleti.fichaJugador(new Jugador("Jan Oblak", "Portero", 45000));
-atleti.fichaJugador(new Jugador("Nahuel Molina", "Defensa", 55000));
-atleti.fichaJugador(new Jugador("Robin Aime", "Defensa", 65000));
-atleti.fichaJugador(new Jugador("Antoine Greizmann", "Delantero", 85000));
-atleti.fichaJugador(new Jugador("Julian Alvarez", "Delantero", 85000));
+atleti.fichaJugador(new Jugador("Jan Oblak", "Portero", 45));
+atleti.fichaJugador(new Jugador("Nahuel Molina", "Defensa", 55));
+atleti.fichaJugador(new Jugador("Robin Aime", "Defensa", 65));
+atleti.fichaJugador(new Jugador("Antoine Greizmann", "Delantero", 85));
+atleti.fichaJugador(new Jugador("Julian Alvarez", "Delantero", 85));
 
 
 function mostrarTop3(equipo) {
@@ -33,11 +33,11 @@ function mostrarTop3(equipo) {
     console.log(`Los 3 jugadores del equipo ${equipo.nombre}:`);
 
     top3.forEach(jugador => {
-        console.log(`Nombre: ${jugador.nombre}, Posicion: ${jugador.posicion}, Valor: ${jugador.valor}`);
+        console.log(`Nombre: ${jugador.nombre}, Posicion: ${jugador.posicion}, Valor: ${jugador.valor} M€`);
         
     });
 }
-mostrarTop3(barsa)
+mostrarTop3(barca)
 mostrarTop3(madrid)
 mostrarTop3(atleti)
 
