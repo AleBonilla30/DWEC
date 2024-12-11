@@ -33,7 +33,7 @@ btnGuardar.addEventListener("click", (e) => {
             const nuevaTarea = {id: contador, nombre, descripcion, fecha,prioridad, prioritaria} 
             contador++;
             tareas.push(nuevaTarea)
-            agregarNodoTarea(nombre, descripcion,prioridad,fecha)
+            agregarNodoTarea(nuevaTarea)
             clearNodo()
 
 
@@ -51,7 +51,7 @@ btnGuardar.addEventListener("click", (e) => {
 }) 
     
 
-function agregarNodoTarea(nombre, descripcion, prioridad, fecha) {
+function agregarNodoTarea(tarea) {
     let columna = document.createElement("div")
     columna.className = "col animate__animated animate__fadeInDown"
 
@@ -60,9 +60,9 @@ function agregarNodoTarea(nombre, descripcion, prioridad, fecha) {
 
     let imagen = document.createElement("img")
     imagen.className = "card-img-top"
-    if (prioridad == 1) {
+    if (tarea.prioridad == 1) {
         imagen.src = "./img/Alta.png"
-    }else if (prioridad == 2) {
+    }else if (tarea.prioridad == 2) {
         imagen.src = "./img/media.png"
     } else {
         imagen.src = "./img/baja.png"
@@ -73,15 +73,15 @@ function agregarNodoTarea(nombre, descripcion, prioridad, fecha) {
 
     let titulo = document.createElement("h5")
     titulo.className = "card-title"
-    titulo.textContent = nombre
+    titulo.textContent = tarea.nombre
 
     let descripcionCuerpo = document.createElement("p")
     descripcionCuerpo.className = "card-text"
-    descripcionCuerpo.textContent = descripcion
+    descripcionCuerpo.textContent = tarea.descripcion
 
     let fechaCuerpo = document.createElement("p")
     fechaCuerpo.className = "card-text"
-    fechaCuerpo.innerHTML = `Fecha máxima: <strong>${fecha}</strong>`
+    fechaCuerpo.innerHTML = `Fecha máxima: <strong>${tarea.fecha}</strong>`
 
     let btnCompletar = document.createElement("button")
     btnCompletar.className = "btn btn-primary"
@@ -112,9 +112,7 @@ function completarTarea(id, nodoColumna) {
     }).then((result) => {
         if (result.isConfirmed) {
             nodoColumna.remove()
-            tareas = tareas.map((tarea) => {
-                tarea.id === id ? {...tarea, completa: true} : tarea
-            })
+            tareas = tareas.filter(tarea => tarea.id !== id)
             Swal.fire({
             title: "Completada!",
             text: "La tarea se ha completado!.",
@@ -135,8 +133,6 @@ btnFiltrar.addEventListener("click", (e) => {
     let filtro = filtroSelect.value
     let tareasFiltradas;
 
-    
-    
     if (filtro === "4" ) {
         tareasFiltradas = tareas
     }else{
@@ -153,7 +149,7 @@ function actualizarTareas(resultados) {
     divResultados.innerHTML = ""
 
     resultados.forEach(element => {
-        agregarNodoTarea(element.nombre, element.descripcion, element.prioridad, element.fecha)
+        agregarNodoTarea(element)
     });
 }
 
