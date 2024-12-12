@@ -14,14 +14,7 @@ selectTipo.addEventListener("change", (e) => {
         listaFiltrada = productos
     }
 
-    if (listaFiltrada.length === 0) {
-        Swal.fire({
-            title: "Error!",
-            text: "No se encuentra ese producto",
-            icon: "error"
-        });
-    }
-
+    alertFiltro(listaFiltrada.length)//para saber la cantidad de productos en la alerta
     mostrarProducto(listaFiltrada)
     
 })
@@ -124,6 +117,17 @@ function mostrarProducto(lista) {
     });
 }
 
+function alertFiltro(numero) {
+    let icono = "success"
+    if (numero == 0) {
+        icono = "warning"
+    }
+    Swal.fire({
+        title: "Productos",
+        text: `La cantidad de productos encontrados es ${numero}`,
+        icon: icono
+      });
+}
 
 /* <div class="card" style="width: 18rem;">
   <img src="..." class="card-img-top" alt="...">
