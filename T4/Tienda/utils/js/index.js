@@ -126,7 +126,7 @@ function alertFiltro(numero) {
         title: "Productos",
         text: `La cantidad de productos encontrados es ${numero}`,
         icon: icono
-      });
+    });
 }
 
 /* <div class="card" style="width: 18rem;">
