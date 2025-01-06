@@ -36,6 +36,7 @@ function saluda(nombre, edad = 33) {
 console.log(saluda("Damaris Bonilla", 35));
 //clases
 class Persona {
+    nombre;
     constructor(nombre) {
         this.nombre = nombre;
     }
