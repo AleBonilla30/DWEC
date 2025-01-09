@@ -1,0 +1,7 @@
+<p>El mensaje enviado fue: {{datosRecibido}}</p>
+
+<div>
+    <label for="mensaje">Escribe un mensaje:</label>
+    <input type="text" id="mensaje" [(ngModel)]="mensaje">
+    <button type="button" (click)="enviarDatos()">Enviar mensaje</button>
+</div>
