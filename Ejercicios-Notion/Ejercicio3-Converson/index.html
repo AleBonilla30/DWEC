@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="utils/style.css">
+    <title>Coversor de temperatura</title>
+</head>
+<body>
+    <!--  Crear un conversor de temperaturas entre Celsius y Fahrenheit. -->
+    <div class="container">
+        <h1>Conversor de temperatura</h1>
+        <div class="form-container">
+
+        <form>
+        <div class="celcius">
+            <label for="celcius">Introduce la temperatura en Celcius:</label>
+            <input type="number" id="celcius">
+            <div id="tempe-celcius"></div>
+            <button id="btnCelcius">Convertir a Celcius</button>
+        </div>
+
+        <div class="fahrenheit">
+
+            <label for="Fahrenheit">Introduce la temperatura en Fahrenheit</label>
+            <input type="number" id="Fahrenheit">
+            <div id="tempe-fahrenheit"></div>
+            <button id="btnFahrenheit">Convertir a Fahrenheit</button>
+        </div>
+
+        </form>
+        </div>
+    </div>
+    
+    <script src="utils/script.js"></script>
+    
+</body>
+</html>
