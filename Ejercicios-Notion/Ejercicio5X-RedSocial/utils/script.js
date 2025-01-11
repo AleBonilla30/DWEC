@@ -101,7 +101,7 @@ filtrarPublicaciones.addEventListener('change', () => {
     console.log(filter);
     
 
-    if (filter.value != 'todos') {
+    if (filter != 'todos') {
         filtroCategoria = publicaciones.filter(categoria => categoria.categoria === filter)
     }else{
         filtroCategoria = publicaciones
