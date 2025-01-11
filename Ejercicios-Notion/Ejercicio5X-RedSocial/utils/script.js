@@ -15,8 +15,6 @@ let publicatBtn = document.querySelector('#btnPublicar')
 let timeline = document.querySelector('#timeline')
 let filtrarPublicaciones = document.querySelector('#selectFiltro')
 
-let resultDiv = document.querySelector('#divResultado')
-
 let publicaciones = []
 
 publicatBtn.addEventListener('click', (e) => {
@@ -111,7 +109,7 @@ filtrarPublicaciones.addEventListener('change', () => {
 })
 
 function actualizarFiltro(resultado) {
-    resultDiv.innerHTML = ""
+    timeline.innerHTML = ""
 
     resultado.forEach(element => {
         crearPublicacion(element)
