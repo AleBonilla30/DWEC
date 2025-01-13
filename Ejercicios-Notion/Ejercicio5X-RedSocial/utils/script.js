@@ -119,7 +119,7 @@ function actualizarFiltro(resultado) {
 function alertaFiltro(numero) {
     let icono = 'success'
 
-    if (numero = 0) {
+    if (numero == 0) {
         icono = 'warning'
     }else{
         Swal.fire({
