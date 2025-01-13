@@ -15,7 +15,11 @@ fetch('https://jsonplaceholder.typicode.com/users')
     });
     
     usuarios.forEach(element => {
-        agregarUsuarios(element)
+
+        setTimeout(() => {
+            
+            agregarUsuarios(element)
+        }, 2000);
 
         console.log(element);
     });
