@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Productos</title>
+    
+
+    <!-- boostrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> 
+    
+
+    <link rel="stylesheet" href="utils/css/style.css">
+
+    <!-- sweet alerts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Animaciones -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a href="#" class="navbar-brand nav-text animate__animated animate__zoomIn"><span><strong>Alebo</strong></span>Store</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <form class="d-flex" role="search">
+                <select id="select-tipo" class="form-select me-2">
+                    <option value="todos">Todos</option>
+                    <option value="price">Precio Mínimo</option>
+                    <option value="category">Categoria</option>
+                    <option value="brand">Marca</option>
+                </select>
+
+                <select  id="CategoriaSelectFiltro" style="display: none;" class="form-select me-2">
+                    <option value="groceries">Alimentación</option>
+                    <option value="beauty">Belleza</option>
+                    <option value="fragrances">Perfumeria</option>
+                    <option value="furniture">Muebles</option>
+                </select>
+
+                <select  id="marcaSelectFiltro" style="display: none;" class="form-select me-2">
+                    <option value="Essence">Essence</option>
+                    <option value="Glamour Beauty">Glamour Beauty</option>
+                    <option value="Velvet Touch">Velvet Touch</option>
+                    <option value="Chic Cosmetics">Chic Cosmetics</option>
+                    <option value="Nail Couture">Nail Couture</option>
+                    <option value="Calvin Klein">Calvin Klein</option>
+                    <option value="Chanel">Chanel</option>
+                    <option value="Dior">Dior</option>
+                    <option value="Dolce & Gabbana">Dolce & Gabbana</option>
+                    <option value="Annibale Colombo">Annibale Colombo</option>
+                    
+                </select>
+
+                <button class="btn btn-outline-success" type="button" id="btnFiltrar">Filtrar</button>
+            </form>
+        </div>
+
+    </nav>
+
+    
+    <main class="container mt-5 ">
+    <!--  <div class="filter-container">
+            <div class="row">
+                <div class="col-mb-3">
+                    <select id="select-tipo" class="form-select">
+                        <option value="todos">Todos</option>
+                        <option value="price">Precio Mínimo</option>
+                        <option value="category">Categoria</option>
+                        <option value="brand">Marca</option>
+                    </select>
+
+                </div>
+                <div class="col-mb-3">
+                    <select  id="CategoriaSelectFiltro" style="display: none;" class="form-select">
+                        <option value="groceries">Alimentación</option>
+                        <option value="beauty">Belleza</option>
+                        <option value="fragrances">Perfumeria</option>
+                        <option value="furniture">Muebles</option>
+                    </select>
+
+                </div>
+                <div class="col-mb-3">
+                    <select  id="marcaSelectFiltro" style="display: none;" class="form-select">
+                        <option value="Essence">Essence</option>
+                        <option value="Glamour Beauty">Glamour Beauty</option>
+                        <option value="Velvet Touch">Velvet Touch</option>
+                        <option value="Chic Cosmetics">Chic Cosmetics</option>
+                        <option value="Nail Couture">Nail Couture</option>
+                        <option value="Calvin Klein">Calvin Klein</option>
+                        <option value="Chanel">Chanel</option>
+                        <option value="Dior">Dior</option>
+                        <option value="Dolce & Gabbana">Dolce & Gabbana</option>
+                        <option value="Annibale Colombo">Annibale Colombo</option>
+                        
+                    </select>
+
+                </div>
+                <div class="col-mb-3">
+
+                    <button type="button" class="btn btn-primary  w-100" id="btnFiltrar">Filtrar</button>
+                </div>
+                    
+            </div>
+        </div> -->
+
+        <div class="row mt-5">
+            <div class="col-8 contenedor">
+                <h3 class="header">Productos</h3>
+                <div class="row mt-2 row-cols-1 row-cols-md-1 row-cols-lg-3 g-1" id="divProductos"></div>
+            </div>
+
+            <div class="col-4 contenedor">
+                <h3 class="header">Carrito</h3>
+                <div id="carritoLista" class="list-group">
+                </div>
+                <p class="spam">Total a pagar: <span id="totalPagar">0€</span></p>
+                <div class="d-flex justify-content-center">
+
+                    <button class="btn btn-danger btn-lg mt-3 w-100" id="btnComprar">Comprar</button>
+                </div>
+            </div>
+
+            
+
+            
+        </div>
+    </main>
+    <script src="utils/js/script.js"></script>
+    <script src="utils/js/carrito.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/fondo.webp'); 
+    background-size: cover;
+    background-position: center top; 
+    height: 100vh;
+    margin: 0; 
+    color: white; 
+    
+    
+} 
+span, .nav-text{
+    font-size: 30px;
+}
+h3{
+    font-size: 50px;
+    padding: 10px;
+    text-shadow: 1px 5px 6px rgba(0, 0, 0, 0.5);
+}
+.spam{
+    font-size: 25px;
+    margin-top: 10px;
+    text-shadow: 1px 5px 6px rgba(0, 0, 0, 0.5);
+}
+.swal-custom-popup{
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(5px);
+}
+
+.contenedor{
+    
+    border-radius: 10px;
+    box-shadow: 0 3 4px rgba(0, 0, 0, 0.5);
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.5); /* borde con transparencia */
+
+}
+
+.carta{
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.carta:hover{
+    transform: scale(1.1);
+    box-shadow: 0 5px 8px rgba(0,0,0,0.4);
+}
+
+
