@@ -11,4 +11,8 @@ export class AppComponent {
   autor = 'Alejandra Gonzalez';
   asignatura = 'Desarrollo web entorno cliente';
 
+  seleccion = 1
+
+  
+
 }

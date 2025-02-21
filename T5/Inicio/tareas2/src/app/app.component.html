@@ -1,7 +1,21 @@
 <div class="container mt-4">
   <h1 class="text-center">APP Angular</h1>
-  <p>Esta es la primera app angular realizada por {{autor}} para la asignatura de {{asignatura}}</p>
-  <app-listado></app-listado>
+  <p>Esta es la primera app angular realizada por {{autor}} para la asignatura de {{asignatura}}. 
+    Por favor selecciona que componente quieres ver</p>
+
+    <select class="form-select" [(ngModel)]="seleccion">
+      <option value="1">Conocimientos</option>
+      <option value="2">Asignaturas</option>
+      <option value="3">Tecnologias</option>
+    </select>
+
+    <div [ngSwitch]="seleccion">
+      <app-listado *ngSwitchCase="'1'"></app-listado>
+      <app-asignaturas *ngSwitchCase="'2'"></app-asignaturas>
+      <app-tecnologias *ngSwitchCase="'3'"></app-tecnologias>
+      <p *ngSwitchDefault>Por favor selecciona una opción</p>
+    </div>
+  
 </div>
 
 

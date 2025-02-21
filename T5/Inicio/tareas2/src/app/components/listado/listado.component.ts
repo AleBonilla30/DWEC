@@ -15,6 +15,8 @@ export class ListadoComponent {
   nivelConocimiento = '';
   imagen = ''
 
+  mostrar = false;
+
   conocimientos: Conocimiento [] = [];
   url = 'https://media.istockphoto.com/id/1164357236/es/foto/desarrollo-de-programadores-que-leen-c%C3%B3digos-inform%C3%A1ticos-desarrollo-de-dise%C3%B1o-de-sitios-web-y.jpg?s=612x612&w=0&k=20&c=bYXBXslxc4awnRQQC7HCsYQEhzsHbmir87OVuD_f0ac='
   
@@ -48,6 +50,10 @@ export class ListadoComponent {
       this.conocimientos.push(conocimiento)
       this.limpiarElemento()
     }
+  }
+
+  mostrarConocimientos(){
+    this.mostrar = !this.mostrar
   }
 
   limpiarElemento(){
