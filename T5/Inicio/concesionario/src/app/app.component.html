@@ -1,0 +1,62 @@
+<div class="container">
+  <h1 class="mt-4 text-center">Concesionario AleBo</h1>
+
+  <div class="row">
+    <div class="col-5">
+      <h1 class="mt-4">Introduce los datos</h1>
+      <select class="form-select mt-3" [(ngModel)]="marcaCoche">
+        <option value="1">Mercedes Benz</option>
+        <option value="2">Toyota</option>
+        <option value="3">Mazda</option>
+        <option value="4">Volkswagen</option>
+        <option value="5">Kia</option>
+      </select>
+      <input type="text" placeholder="Modelo" class="form-control mt-3" [(ngModel)]="modeloCoche">
+      <input type="number" placeholder="Cv" class="form-control mt-3" [(ngModel)]="cvCoche">
+      <input type="number" placeholder="Cc" class="form-control mt-3" [(ngModel)]="ccCoche">
+      <input type="text" placeholder="Tipo de motor" class="form-control mt-3" [(ngModel)]="tipoMotorCoche">
+      <input type="text" placeholder="Matricula" class="form-control mt-3" [(ngModel)]="matriculaCoche">
+      <input type="number" placeholder="Precio" class="form-control mt-3" [(ngModel)]="precioCoche">
+
+      <button class="btn btn-outline-success mt-3 w-100" (click)="agregarCoches()">Agregar</button>
+
+      <div class="alert alert-success mt-3" role="alert" *ngIf="coches.length > 0">
+        EL número de coches existentes es: {{coches.length}}
+      </div>
+    </div>
+    <div class="col-7">
+      <h1 class="mt-4">Filtrar Coches</h1>
+      <select class="form-select" [(ngModel)]="tipoMotorFiltro">
+        <option value="">Todos los tipos de motor</option>
+        <option value="Automatico">Automatico</option>
+        <option value="Hibrido">Hibrido</option>
+        <option value="Manual">Manual</option>
+      </select>
+      <input type="number" placeholder="Precio Minimo" class="form-control mt-2" [(ngModel)]="precioMinimo">
+      <button class="btn btn-outline-success w-100 mt-2" (click)="filtrarCoches()">Filtrar</button>
+
+      <h1 class="mt-4">Datos de coches</h1>
+      <div *ngIf="cochesFiltrados.length > 0">
+        <p>Se encontraron {{ cochesFiltrados.length }} resultados.</p>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col" *ngFor="let item of cochesFiltrados">
+            <div class="card">
+              <img [src]="item.image" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{item.modelo}}</h5>
+                <p class="card-text">{{item.precio}}€</p>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+      <p *ngIf="cochesFiltrados.length === 0" class="text-muted">No hay coches que coincidan con el filtro.</p>
+
+    </div>
+  </div>
+
+</div>
+
+
+<router-outlet />
