@@ -3,73 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="utils/favicon.ico" type="image/x-icon">
 
-    <!-- boostrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> 
-    
-    <!-- sweet alerts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <!-- Animaciones -->
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
-    <title>Tienda Virtual</title>
+    <title>AleBo-Store</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <div class="container">
-            <a href="#" class="navbar-brand nav-text"><span><strong>Ale</strong></span>Store</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <form class="d-flex" role="search">
-                <select id="select-tipo" class="form-select me-2">
-                    <option value="todos">Todos</option>
-                    <option value="price-min">Precio Mínimo</option>
-                    <option value="price-max">Precio Máximo</option>
-                    <option value="category">Categoria</option>
-                </select>
-
-                <select  id="CategoriaSelectFiltro" style="display: none;" class="form-select me-2">
-                    <option value="men's clothing">Ropa de hombre</option>
-                    <option value="jewelery">Joyeria</option>
-                    <option value="electronics">Electronica</option>
-                    <option value="women's clothing">Ropa de mujer</option>
-                </select>
-
-                <button class="btn btn-outline-success" type="button" id="btnFiltrar">Filtrar</button>
-            </form>
-        </div>
-
-    </nav>
-
-    <div class="container">
-        <div class="row mt-5">
-            <div class="col-8 mt-5">
-                <h3>Productos</h3>
-                <div class="row mt-2 row-cols-1 row-cols-md-1 row-cols-lg-2 g-1" id="divProductos"></div>
+    <div class="container-fluid">
+        <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                <img src="utils/img/logo.webp" alt="Logo" width="50" height="44" class="d-inline-block align-text-top">
+                AleBo-Store
+                </a>
+                
+                <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Buscar</button>
+                </form>
             </div>
+        </nav>
 
-            <div class="col-4 mt-5">
-                <h3>Carrito</h3>
-                <div id="carritoLista" class="list-group">
-                </div>
-                <p class="spam">Total a pagar: <span id="totalPagar">0</span></p>
-                <div class="d-flex justify-content-center">
+        <div class="row">
+            <div class="col-8 mt-3">
+                <h1>Todos los productos</h1>
 
-                    <button class="btn btn-danger btn-lg mt-3 w-100" id="btnComprar">Comprar</button>
-                </div>
+                <div id="divProductos" class="row mt-2 row-cols-1 row-cols-md-3 g-4"></div>
+
             </div>
+            <div class="col-4 mt-3">
+                <h1>Carrito</h1>
+                <div id="carritoCompra" class="list-group"></div>
+                <p>Total a pagar: <span id="total">0€</span></p>
+                <button class="btn btn-outline-success">Realizar compra</button>
 
             </div>
         </div>
+
     </div>
 
     <script src="utils/script.js"></script>
-    
+    <script src="utils/carrito.js"></script>
 </body>
 </html>
