@@ -1,4 +1,4 @@
-<div class="container mt-4">
+<!-- <div class="container mt-4">
   <h1 class="text-center">APP Angular</h1>
   <p>Esta es la primera app angular realizada por {{autor}} para la asignatura de {{asignatura}}. 
     Por favor selecciona que componente quieres ver</p>
@@ -16,8 +16,40 @@
       <p *ngSwitchDefault>Por favor selecciona una opción</p>
     </div>
   
+</div> -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Ale Bonilla</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" [routerLink]="['/asignaturas', seleccion]">Asignaturas</a><!-- esta es otra manera de hacerlo con arrays -->
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/tecnologias">Tecnologias</a><!-- con esto me redirige a cada paginas que hemos configuras en el routing module, hay que ponerle la / por que eso indica que es una ruta padre y 
+          se puede confundir con una ruta hija-->
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="navegar()" style="cursor: pointer;">Listado</a><!-- este es otro tipo para hacer la navegacion -->
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container mt-3">
+  <select class="form-select" [(ngModel)]="seleccion">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+  </select>
+  <router-outlet />
 </div>
 
 
-
-<router-outlet />

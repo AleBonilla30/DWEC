@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,6 +14,10 @@ export class AppComponent {
 
   seleccion = 1
 
+  constructor(private router: Router){}
   
+  navegar(){
+    this.router.navigate(["listado", this.seleccion])//se puede hacer de esta manera para poder navegar, AQUI SE LE PASA EL PATH
+  }
 
 }
