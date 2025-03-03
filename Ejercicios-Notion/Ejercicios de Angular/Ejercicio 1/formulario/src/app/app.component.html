@@ -20,8 +20,9 @@
       
     </div>
     <div class="col-6">
+      <input type="checkbox" class="mt-5" [(ngModel)]="mostrar"> Mostrar Usuarios
       <h2 class="text-center mt-3">Usuarios</h2>
-      <table class="table table-striped" *ngIf="usuarios.length > 0; else noUsuarios">
+      <table class="table table-striped" *ngIf="mostrar && usuarios.length > 0; else noUsuarios">
         <thead>
           <tr class="table">
             <th scope="col">Nombre</th>

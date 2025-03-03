@@ -11,6 +11,8 @@ export class AppComponent {
   title = 'formulario';
   modalTitle: string = ''
   modalContent: string = ''
+
+  mostrar = false
   
 
   nombre = ""
