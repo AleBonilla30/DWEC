@@ -1,0 +1,92 @@
+<div class="container">
+  <div class="badge text-bg-primary text-wrap mt-5 " style="width: 25rem;">
+    
+    <h1 class="text-center">Formulario de registro de usuarios</h1>
+  </div>
+
+  <div class="row">
+    <div class="col-6 mt-5">
+    
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre:</label>
+          <input type="text" class="form-control"  [(ngModel)]="nombre">
+        </div>
+        <div class="mb-3">
+          <label for="edad" class="form-label">Edad:</label>
+          <input type="number" class="form-control"  [(ngModel)]="edad">
+        </div>
+        
+        <button type="submit" class="btn btn-primary" (click)="guardarUsuarios()">Guardar</button>
+      
+    </div>
+    <div class="col-6">
+      <h2 class="text-center mt-3">Usuarios</h2>
+      <table class="table table-striped" *ngIf="usuarios.length > 0; else noUsuarios">
+        <thead>
+          <tr class="table">
+            <th scope="col">Nombre</th>
+            <th scope="col">Edad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of usuarios">
+            <td>{{item.nombre}}</td>
+            <td>{{item.edad}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <ng-template #noUsuarios>
+        <p class="text-muted">No hay usuarios registrados</p>
+      </ng-template>
+      
+      <!-- <ul class="list-group" *ngFor="let item of usuarios">
+        <li class="list-group-item">{{item.nombre}}, {{item.edad}} años</li>
+      </ul> -->
+    </div>
+    <div class="row mt-3">
+      <div class="col-md-3">
+        <div class="card" (click)="openModal('stock')" data-bs-toggle="modal" data-bs-target="#stockModal">
+          <div class="card-body">
+            <h5 class="card-title">Gestión de Stock</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card" (click)="openModal('recetas')" data-bs-toggle="modal" data-bs-target="#stockModal">
+          <div class="card-body">
+            <h5 class="card-title">Recetas inteligentes</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card" (click)="openModal('registro')" data-bs-toggle="modal" data-bs-target="#stockModal">
+          <div class="card-body">
+            <h5 class="card-title">Registro de productos</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card" (click)="openModal('alerta')" data-bs-toggle="modal" data-bs-target="#stockModal">
+          <div class="card-body">
+            <h5 class="card-title">alertas</h5>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    
+    
+
+    
+    
+    <!-- Componente Modal -->
+    <app-flavoury-stock [modalContent]="modalContent" [modalTitle]="modalTitle"></app-flavoury-stock>
+    
+  </div>
+
+
+
+</div>
+
+
+<router-outlet />
