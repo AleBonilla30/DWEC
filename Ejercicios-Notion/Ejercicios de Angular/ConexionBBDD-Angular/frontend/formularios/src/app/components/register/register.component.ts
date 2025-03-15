@@ -9,7 +9,7 @@ import { ToastService } from '../../services/toast.service';
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
-
+  
   user = {
     nombre: '',
     primer_apellido: '',
@@ -21,15 +21,18 @@ export class RegisterComponent {
   constructor(private authService: AuthService, private toastService: ToastService){}
 
   register(){
-    this.authService.register(this.user).subscribe(
-      (response) => {
-        this.toastService.showSuccess('Usuario registrado exitosamente')
-      }, 
-      (error) =>{
-        this.toastService.showError('No se ha podido registrar al usuario')
+
+    this.authService.register(this.user).subscribe({
+      next: (response) => {
+        this.toastService.showSuccess(`Usuario registrado exitosamente ${response}`);
+      },
+      error: (error) => {
+        this.toastService.showError(`No se ha podido registrar al usuario ${error}`);
+      },
+      complete: () => {
+        console.log("Completado");
       }
-      
-    )
+    });
     this.clear()
   }
 

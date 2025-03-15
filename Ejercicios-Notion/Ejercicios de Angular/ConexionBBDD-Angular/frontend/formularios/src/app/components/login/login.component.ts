@@ -18,16 +18,16 @@ export class LoginComponent {
   constructor(private authService: AuthService, private toastService: ToastService){}
 
   login(){
-    this.authService.login(this.userLogin).subscribe(
-      (Response) =>{
+    this.authService.login(this.userLogin).subscribe({
+      next: (Response) =>{
       
-        this.toastService.showSuccess('Inicio de sesión exitoso')
+        this.toastService.showSuccess(`Inicio de sesión exitoso ${Response}`)
       },
-      (error) =>{
+      error:  (error) =>{
 
-        this.toastService.showError('Error en el inicio de sesión')
+        this.toastService.showError(`Error en el inicio de sesión ${error}`)
       }
-
+    }
     )
     this.clear()
   }
