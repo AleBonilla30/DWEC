@@ -1,0 +1,8 @@
+<ul class="list-group">
+    <li *ngFor="let item of posts" class="list-group-item" [ngClass]="{'list-group-item list-group-item-success': item.reactions.likes>100,
+     'list-group-item list-group-item-primary': item.reactions.likes > 50 && item.reactions.likes <= 100, 
+    'list-group-item list-group-item-warning': item.reactions.likes > 10 && item.reactions.likes <= 50}
+     ">
+        {{item.title}}
+    </li>
+</ul>
