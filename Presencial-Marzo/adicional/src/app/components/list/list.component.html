@@ -1,8 +1,26 @@
-<ul class="list-group">
-    <li *ngFor="let item of posts" class="list-group-item" [ngClass]="{'list-group-item list-group-item-success': item.reactions.likes>100,
-     'list-group-item list-group-item-primary': item.reactions.likes > 50 && item.reactions.likes <= 100, 
+<!-- <ul class="list-group">
+    <li *ngFor="let item of posts" class="list-group-item" [ngClass]="{
+        'list-group-item list-group-item-success': item.reactions.likes> 100,
+        'list-group-item list-group-item-primary': item.reactions.likes > 50 && item.reactions.likes <= 100, 
     'list-group-item list-group-item-warning': item.reactions.likes > 10 && item.reactions.likes <= 50}
-     ">
+    ">
         {{item.title}}
     </li>
 </ul>
+-->
+
+<div class="row row-cols-1 row-cols-md-3 g-4 mt-4">
+    <div class="col" *ngFor="let item of posts">
+        <div class="card">
+            <img [src]="item.tags|imagenes" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{item.title |uppercase}}</h5>
+                <p class="card-text">Las tematicas de este post:</p>
+                <ul class="list-group">
+                    <li class="list-group-item" *ngFor="let tags of item.tags">{{tags |titlecase}}</li>
+                </ul>
+                <button class="btn btn-outline-primary mt-4" [routerLink]="['/detail',item.id]">Ver detalle</button>
+            </div>
+        </div>
+    </div>
+</div>

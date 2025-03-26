@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Post } from '../model/post';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { url } from 'inspector';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DataService {
-  private posts: Post[] = [
+ /*  private posts: Post[] = [
     {
       id: 1,
       title: 'His mother had always taught him',
@@ -277,15 +280,20 @@ export class DataService {
       views: 3558,
       userId: 177,
     },
-  ];
+  ]; */
+  
+  private api = 'https://dummyjson.com/posts'
+  constructor( private Http: HttpClient) {}
 
-  constructor() {}
-
-  public getAllPost(): Post[]{
-    return this.posts
+  public getAllPostUrl(): Observable<any> {
+    return this.Http.get(this.api)
   }
 
-  public getPostById(id: number):Post | undefined{
-    return this.posts.find((item) =>{return item.id == id})
+  /* public getAllPost(): Post[]{
+    return this.posts
+  }
+ */
+  public getPostById(id: number): Observable<Post>{
+    return this.Http.get<Post>(`${this.api}/${id}`)
   }
 }

@@ -9,10 +9,13 @@ import { DataService } from '../../service/data.service';
   styleUrl: './list.component.css'
 })
 export class ListComponent {
-  posts?: Post[] // el ? es que lo tendra el valor 
+  posts: Post[] = [] 
 
   constructor(private dataService: DataService){
-    this.posts = dataService.getAllPost()
+    //this.posts = dataService.getAllPost()
+    this.dataService.getAllPostUrl().subscribe((data) =>{
+      this.posts = data.posts
+    })
   }
 
 
