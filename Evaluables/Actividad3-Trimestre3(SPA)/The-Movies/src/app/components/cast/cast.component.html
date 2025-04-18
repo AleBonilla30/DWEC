@@ -1,0 +1,16 @@
+<div class="swiper">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide text-white text-center" *ngFor="let actors of cast">
+            <ng-container *ngIf="actors.profile_path">
+                <!--se para agrupar elementos sin generar un nodo extra en el DOM. Sirve para aplicar directivas como *ngIf, *ngFor, *ngSwitch, sin afectar la estructura del HTML. -->
+                <img [src]="actors.profile_path | poster" class="img-thumbnail">
+            </ng-container>
+            
+
+            <ng-container *ngIf="!actors.profile_path">
+                <img src="../assets/noImage.png" class="img-thumbnail">
+            </ng-container>
+            {{actors.name}}
+        </div>
+    </div>
+</div>

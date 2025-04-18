@@ -1,0 +1,13 @@
+<h1 class="mt-5">Cartelera</h1>
+
+<div class="row" *ngIf="movies.length > 0">
+    <div class="col">
+        <app-slideshow [movies]="movies"></app-slideshow>
+    </div>
+</div>
+
+<h1 class="mt-5">Todas las películas</h1>
+
+<button class="btn btn-outline-danger mb-4 g-4" (click)="loadPreviesMovie()" [disabled]="currentPage === 1"><i class="fa-solid fa-circle-arrow-left"></i></button>
+<button class="btn btn-outline-danger mb-4 g-4" (click)="loadMoreMovies(currentPage + 1)"><i class="fa-solid fa-circle-arrow-right"></i></button>
+<app-movies-poster [movies]="movies"></app-movies-poster>

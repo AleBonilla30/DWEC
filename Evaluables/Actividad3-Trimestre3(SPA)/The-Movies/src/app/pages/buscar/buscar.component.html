@@ -1,0 +1,11 @@
+<h1 class="text-capitalize">Buscar peliculas <small>{{texto}}</small></h1>
+<button class="btn btn-outline-info" (click)="regresar()"><i class="fa-solid fa-circle-arrow-left"></i></button>
+<hr>
+
+<div class="row">
+    <div class="col">
+        <app-movies-poster [movies]="movies" *ngIf="movies.length > 0"></app-movies-poster>
+
+        <h3 class="text-warning" *ngIf="noMovie"><strong>{{noMovie}}</strong></h3>
+    </div>
+</div>
