@@ -9,6 +9,8 @@ import { ListComponent } from './components/list/list.component';
 import { ErrorComponent } from './components/error/error.component';
 import { ImagenesPipe } from './pipe/imagenes.pipe';
 import { HttpClientModule } from '@angular/common/http';
+import { FilterComponent } from './components/filter/filter.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,11 +20,13 @@ import { HttpClientModule } from '@angular/common/http';
     ListComponent,
     ErrorComponent,
     ImagenesPipe,
+    FilterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [
     provideClientHydration(withEventReplay())

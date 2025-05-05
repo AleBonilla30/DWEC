@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Post } from '../../model/post';
 import { DataService } from '../../service/data.service';
 
@@ -9,7 +9,7 @@ import { DataService } from '../../service/data.service';
   styleUrl: './list.component.css'
 })
 export class ListComponent {
-  posts: Post[] = [] 
+  @Input() posts?: Post[] 
 
   constructor(private dataService: DataService){
     //this.posts = dataService.getAllPost()

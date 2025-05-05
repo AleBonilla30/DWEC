@@ -1,0 +1,27 @@
+<select class="form-select" [(ngModel)]="seleccionTag">
+    <option>life</option>
+    <option>history</option>
+    <option>american</option>
+    <option>crime</option>
+    <option>fiction</option>
+    <option>french</option>
+    <option>love</option>
+</select>
+<button class="btn btn-primary mt-3" (click)="selecionFiltro()">Filtrar</button>
+<app-list [posts]="posts"></app-list>
+
+<!-- <div class="row row-cols-1 row-cols-md-3 g-4 mt-4">
+    <div class="col" *ngFor="let tags of posts">
+      <div class="card">
+        <img [src]="tags.tags |imagenes" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{tags.title}}</h5>
+          <ul class="list-group">
+            <li class="list-group-item" *ngFor="let tags of tags.tags">{{tags |titlecase}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    
+  </div> -->

@@ -296,4 +296,8 @@ export class DataService {
   public getPostById(id: number): Observable<Post>{
     return this.Http.get<Post>(`${this.api}/${id}`)
   }
+
+  public getPostByTag(name: string): Observable<any>{
+    return this.Http.get(`${this.api}/tag/${name}`)
+  }
 }
