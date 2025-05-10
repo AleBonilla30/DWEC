@@ -1,0 +1,21 @@
+<div class="container mt.5">
+  <h1 class="mb-3">Cartas de libros con los villanos</h1>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col" *ngFor="let libro of libros">
+      <div class="card">
+        <img src="https://img.asmedia.epimg.net/resizer/v2/KXLTIKQG5ZAZJLVUWEBPVWJYIQ.jpg?auth=caecc3e601dea69fbb93a3a6fc614d3b81dfea807b19f98aae0bbed70fb9fd7c&width=1472&height=1104&smart=true" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">{{libro.Title}}</h5>
+          <p class="card-text">
+            Numero de páginas {{libro.Pages}}
+          </p>
+          <p class="card-text">Lista de villanos:</p>
+          <ul class="list-group">
+            <li class="list-group-item" *ngFor="let villanos of libro.villains">{{villanos.name}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
