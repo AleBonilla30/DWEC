@@ -12,7 +12,7 @@ export class ListaComponent {
   movies!: Movies[]
 
   constructor(private movieService: DataService){
-    movieService.getAllMovies().subscribe(movie => {
+    this.movieService.getAllMovies().subscribe(movie => {
       this.movies = movie
     })
 

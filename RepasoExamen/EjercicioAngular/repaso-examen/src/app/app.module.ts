@@ -8,12 +8,14 @@ import { FormsModule } from '@angular/forms'
 import {  HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { CartasLibroComponent } from './components/cartas-libro/cartas-libro.component';
+import { PostsComponent } from './components/posts/posts.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListaLibrosComponent,
-    CartasLibroComponent
+    CartasLibroComponent,
+    PostsComponent
   ],
   imports: [
     BrowserModule,

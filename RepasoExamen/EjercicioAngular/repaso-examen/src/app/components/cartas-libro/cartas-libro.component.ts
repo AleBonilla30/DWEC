@@ -12,7 +12,7 @@ export class CartasLibroComponent {
   libros!: Libros[]
 
   constructor(private dataService: DataService) {
-    dataService.getAllBocks().subscribe(bocks => {
+    this.dataService.getAllBocks().subscribe(bocks => {
       this.libros = bocks.data
     })
   }
