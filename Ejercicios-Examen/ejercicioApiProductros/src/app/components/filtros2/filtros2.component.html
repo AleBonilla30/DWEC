@@ -1,0 +1,21 @@
+<div class="container mt-5">
+    <h1>Productos Filtrados2</h1>
+
+    <select class="form-control" [(ngModel)]="selectCategories" (change)="getProductsByCategories()">
+        <option *ngFor="let cat of categories" value="{{cat.slug}}">{{cat.name}}</option>
+    </select>
+
+    <div class="mt-3">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col" *ngFor="let pro of productos">
+                <div class="card">
+                <img src="{{pro.images[0]}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{pro.title}}</h5>
+                    <p class="card-text">{{pro.description}}</p>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
